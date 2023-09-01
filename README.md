@@ -1,61 +1,22 @@
-# Health-Bot using LLama 2: Medical Chatbot 
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [File Structure](#file-structure)
-- [Usage](#usage)
-- [Code Examples](#code-examples)
-- [Contributing](#contributing)
-- [License](#license)
+# Medical-Bot using Llama 2
 
 ## Overview
 
-This repository contains the source code for Health-Bot, a specialized chatbot aimed at providing reliable and instant medical information. Utilizing the power of advanced NLP models and search algorithms, the chatbot can dig through a large database of medical documents to provide accurate and quick responses.
+This is a medical chatbot that utilizes Llama2 from Meta along with Sentence Transformers to provide real-time medical information and advice. All model inferences run locally on the user's CPU, ensuring data privacy by not transmitting any information online. The system requires a minimum of 16GB of RAM to operate smoothly, as the model is quite resource-intensive. It leverages specialized embeddings that have been fine-tuned using data from a comprehensive Medical Encyclopedia in PDF format. The chatbot is hosted on the ChainLit framework and leverages Langchain technology to efficiently process and respond to user queries.
 
 ## Features
 
-- **Pre-trained and Quantized LLama 2 Model**: Ensures high-quality medical responses.
-- **CTransformers Python Bindings**: Fast and efficient low-level access to the LLama model.
-- **Sentence Transformer Embeddings (All MiniLM v6)**: Robust document embeddings for accurate search and retrieval.
-- **Searchable Vector Store Options**:
-    - **Chroma DB**: For high-capacity, large-scale applications.
-    - **Faiss CPU**: For quick and memory-efficient applications.
-    - **Qdrant**: An alternative vector storage option.
+- **Pre-trained and Quantized LLama 2 Model**: Llama 2 pretrained model, that is trained on 2 trillion tokens, and have double the context length than Llama 1. Its fine-tuned models have been trained on over 1 million human annotations. I used the weights converted by (TheBloke)[https://huggingface.co/TheBloke].
+- **CTransformers**: CTransformers is a python binding for ML C library - (GGML)[https://github.com/ggerganov/ggml], which is a tensor library for machine learning to enable large models and high performance on commodity hardware
+- **Sentence Transformer Embeddings (All MiniLM v6)**: SentenceTransformers is a Python framework for state-of-the-art sentence, text and image embeddings.
+- **Vector Store Options**: Vector databases with LLMs can handle large-scale, high-dimensional data, enabling more nuanced, context-aware, and efficient natural language understanding applications.
+    - **Chroma DB**
+    - **Faiss CPU**
+    - **Qdrant**
 
 ## Architecture
 
-
-## Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your_username/health-bot.git
-
-# Navigate to the project directory
-cd health-bot
-
-# Install required dependencies
-pip install -r requirements.txt
-```
-
-## File Structure
-
-```
-.
-├── digest.py                  # Converts PDFs to vector embeddings
-├── model.py                   # Main logic for query handling and response
-├── data/                      # Store your medical PDFs here
-├── vectorstores/              
-│   ├── chroma_db/             # Chroma DB storage
-│   ├── faiss_db/              # Faiss CPU storage
-│   └── qdrant/                # Qdrant storage
-├── requirements.txt           # Dependency list
-└── README.md
-```
+![chatbot architecture](architecture.png)
 
 ## Usage
 
@@ -77,38 +38,3 @@ The chatbot can be initiated using the following command.
 python model.py
 ```
 
-## Code Examples
-
-### Creating the Vector Database
-
-In `digest.py`, the `create_vector_db()` function creates a searchable vector database from PDFs stored in the `data/` directory.
-
-```python
-# digest.py
-if __name__ == '__main__':
-    create_vector_db()
-```
-
-### Setting up the QA Bot
-
-In `model.py`, the `query_response` function handles the main logic for generating a response based on a query.
-
-```python
-# model.py
-def query_response(query_text):
-    query_chain = setup_qa_bot()
-    processed_response = query_chain({'query': query_text})
-    return processed_response
-```
-
-## Contributing
-
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
-
----
-
-Feel free to modify the README.md as per the needs of your project.
