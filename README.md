@@ -6,10 +6,14 @@ This is a medical chatbot that utilizes Llama2 from Meta along with Sentence Tra
 
 ## Features
 
-- **Pre-trained and Quantized LLama 2 Model**: Llama 2 pretrained model, that is trained on 2 trillion tokens, and have double the context length than Llama 1. Its fine-tuned models have been trained on over 1 million human annotations. I used the weights converted by [TheBloke](https://huggingface.co/TheBloke).
-- **CTransformers**: CTransformers is a python binding for ML C library - [GGML](https://github.com/ggerganov/ggml), which is a tensor library for machine learning to enable large models and high performance on commodity hardware
-- **Sentence Transformer Embeddings (All MiniLM v6)**: SentenceTransformers is a Python framework for state-of-the-art sentence, text and image embeddings.
-- **Vector Store Options**: Vector databases with LLMs can handle large-scale, high-dimensional data, enabling more nuanced, context-aware, and efficient natural language understanding applications.
+- **Pre-trained and Quantized LLama 2 Model**: 
+Llama 2 pretrained model, that is trained on 2 trillion tokens, and have double the context length than Llama 1. Its fine-tuned models have been trained on over 1 million human annotations. I used the weights converted by [TheBloke](https://huggingface.co/TheBloke).
+- **CTransformers**: 
+CTransformers is a python binding for ML C library - [GGML](https://github.com/ggerganov/ggml), which is a tensor library for machine learning to enable large models and high performance on commodity hardware
+- **Sentence Transformer Embeddings (All MiniLM v6)**: 
+SentenceTransformers is a Python framework for state-of-the-art sentence, text and image embeddings.
+- **Vector Store Options**: 
+Vector databases with LLMs can handle large-scale, high-dimensional data, enabling more nuanced, context-aware, and efficient natural language understanding applications.
     - **Chroma DB**
     - **Faiss CPU**
     - **Qdrant**
