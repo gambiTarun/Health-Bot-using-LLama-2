@@ -13,7 +13,7 @@ CTransformers is a python binding for ML C library - [GGML](https://github.com/g
 - **Sentence Transformer Embeddings (All MiniLM v6)**: 
 SentenceTransformers is a Python framework for state-of-the-art sentence, text and image embeddings.
 - **Vector Store Options**: 
-Vector databases with LLMs can handle large-scale, high-dimensional data, enabling more nuanced, context-aware, and efficient natural language understanding applications.
+Vector databases with LLMs can handle large-scale, high-dimensional data, enabling more nuanced, context-aware, and efficient natural language understanding applications. Following open-source frameworks are available to process vector databases:
     - **Chroma DB**
     - **Faiss CPU**
     - **Qdrant**
