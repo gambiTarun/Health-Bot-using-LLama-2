@@ -1,10 +1,8 @@
 # Medical-Bot using Llama 2
 
-## Overview
-
 This is a medical chatbot that utilizes Llama2 from Meta along with Sentence Transformers to provide real-time medical information and advice. All model inferences run locally on the user's CPU, ensuring data privacy by not transmitting any information online. The system requires a minimum of 16GB of RAM to operate smoothly, as the model is quite resource-intensive. It leverages specialized embeddings that have been fine-tuned using data from a comprehensive Medical Encyclopedia in PDF format. The chatbot is hosted on the ChainLit framework and leverages Langchain technology to efficiently process and respond to user queries.
 
-## Features
+# Key-Points
 
 - **Pre-trained and Quantized LLama 2 Model**: 
 Llama 2 pretrained model, that is trained on 2 trillion tokens, and have double the context length than Llama 1. Its fine-tuned models have been trained on over 1 million human annotations. I used the weights converted by [TheBloke](https://huggingface.co/TheBloke).
@@ -18,13 +16,13 @@ Vector databases with LLMs can handle large-scale, high-dimensional data, enabli
     - **Faiss CPU**
     - **Qdrant**
 
-## Architecture
+# Architecture
 
 ![chatbot architecture](architecture.png)
 
-## Usage
+# Usage
 
-### Creating the Vector Database
+## Creating the Vector Database
 
 The first step is to populate the vector database with medical documents for the chatbot to search.
 
@@ -33,7 +31,7 @@ The first step is to populate the vector database with medical documents for the
 python digest.py
 ```
 
-### Start the Chatbot
+## Start the Chatbot
 
 The chatbot can be initiated using the following command.
 
