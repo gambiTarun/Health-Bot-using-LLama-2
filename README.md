@@ -28,7 +28,7 @@ The first step is to populate the vector database with medical documents for the
 
 ```bash
 # Run this script to populate the vector database
-python digest.py
+python ingest.py
 ```
 
 ## Start the Chatbot
@@ -40,3 +40,6 @@ The chatbot can be initiated using the following command.
 python model.py
 ```
 
+## License
+
+This project is licensed under the terms of the MIT license.
